@@ -59,7 +59,20 @@ a {
 
 .brand {
   display: grid;
-  gap: 2px;
+  grid-template-columns: 44px auto;
+  grid-template-rows: auto auto;
+  column-gap: 10px;
+  row-gap: 2px;
+  align-items: center;
+}
+
+.brand-logo {
+  grid-row: 1 / span 2;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .brand-mark {
@@ -471,4 +484,3 @@ td {
     display: flex;
   }
 }
-
