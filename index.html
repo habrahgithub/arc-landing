@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARC — Audit Layer for AI-Assisted Coding</title>
+    <meta
+      name="description"
+      content="ARC introduces a deterministic, tamper-evident audit layer inside your IDE. It records and verifies critical code decisions before they reach PR/CI/production."
+    />
+    <meta name="theme-color" content="#0e0e0e" />
+
+    <meta property="og:title" content="ARC — Audit Layer for AI-Assisted Coding" />
+    <meta
+      property="og:description"
+      content="Deterministic, tamper-evident accountability inside the IDE — before PR/CI/production."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="ARC home">
+        <div class="brand-mark">ARC</div>
+        <div class="brand-subtitle">Audit Layer for AI‑Assisted Coding</div>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav">
+        <a href="#problem">Problem</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#proof">Proof</a>
+        <a href="#install">Install</a>
+        <a href="./support.html">Support</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="section hero">
+        <div class="hero-copy">
+          <p class="kicker">Below AI tools · Before PR/CI</p>
+          <h1>ARC — Audit Layer for AI‑Assisted Coding</h1>
+          <p class="hero-text">
+            ARC introduces a deterministic, tamper-evident audit layer inside your IDE.
+            It records and verifies every critical code decision at the moment it’s made — before it
+            reaches PR, CI, or production.
+          </p>
+
+          <div class="diagram">
+            <pre aria-label="ARC stack position diagram">AI (Copilot / Cursor / Claude)
+        ↓
+ARC (Audit Layer)
+        ↓
+Git / PR / CI</pre>
+          </div>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#install">Install ARC XT</a>
+            <a class="button button-secondary" href="#how-it-works">See how it works</a>
+          </div>
+
+          <p class="hero-note">Local-first · No cloud required · Evidence you can verify</p>
+        </div>
+
+        <div class="hero-visual">
+          <div class="glass-panel">
+            <div class="glass-title">What ARC adds</div>
+            <ul class="glass-list">
+              <li>Decision record at save-time</li>
+              <li>Plan/proof artifact (Change ID blueprint)</li>
+              <li>Tamper-evident audit trail</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="problem">
+        <div class="section-heading">
+          <p class="section-kicker">Problem</p>
+          <h2>AI speeds output. It breaks accountability.</h2>
+          <p>
+            PR review shows diffs, not decisions. CI tests outcomes, not intent. When code is generated
+            faster than it can be reviewed, “why” disappears.
+          </p>
+          <p class="callout">
+            If you can’t reliably answer <strong>who decided what, when, and why</strong> before PR, you don’t have an audit layer.
+          </p>
+        </div>
+      </section>
+
+      <section class="section muted" id="how-it-works">
+        <div class="section-heading">
+          <p class="section-kicker">How it works</p>
+          <h2>ARC XT brings the ARC audit layer into VS Code.</h2>
+          <p>
+            ARC XT is the first live ARC product: a local-first VS Code extension that records and verifies critical decisions before a change reaches PR/CI.
+          </p>
+        </div>
+
+        <div class="steps">
+          <article class="step-card">
+            <span class="step-number">01</span>
+            <h3>You make a critical change</h3>
+            <p>ARC activates where it matters: auth, schema, config, and other high-risk edits.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">02</span>
+            <h3>ARC records the decision + proof</h3>
+            <p>Provide a Change ID to link the change to a plan-backed blueprint artifact.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">03</span>
+            <h3>ARC writes tamper-evident evidence</h3>
+            <p>Audit events are chained and verifiable so integrity can be checked and drift detected.</p>
+          </article>
+        </div>
+
+        <aside class="note">
+          ARC sits <strong>below AI tools</strong> and <strong>before Git/PR/CI</strong> — inside the moment of change.
+        </aside>
+      </section>
+
+      <section class="section" id="proof">
+        <div class="section-heading">
+          <p class="section-kicker">Proof</p>
+          <h2>What you get after a critical change</h2>
+        </div>
+
+        <div class="proof-grid">
+          <article class="proof-card">
+            <h3>Decision record</h3>
+            <p>Captured at save-time — not reconstructed later from PR context.</p>
+          </article>
+          <article class="proof-card">
+            <h3>Plan/proof artifact</h3>
+            <p>Change ID blueprint links authorization, scope, constraints, and verification.</p>
+          </article>
+          <article class="proof-card">
+            <h3>Tamper-evident audit trail</h3>
+            <p>Chained evidence you can verify, with drift and partial-write detection.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section muted">
+        <div class="section-heading">
+          <p class="section-kicker">Differentiation</p>
+          <h2>ARC is not an AI tool.</h2>
+        </div>
+
+        <div class="table-wrap" role="region" aria-label="Differentiation table" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th>Others</th>
+                <th>ARC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Generate code</td>
+                <td><strong>Verify decisions</strong></td>
+              </tr>
+              <tr>
+                <td>Suggest fixes</td>
+                <td><strong>Record accountability</strong></td>
+              </tr>
+              <tr>
+                <td>Help speed</td>
+                <td><strong>Enforce trust</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="install">
+        <div class="section-heading">
+          <p class="section-kicker">Install</p>
+          <h2>Install ARC XT</h2>
+          <p>ARC XT is available on both major extension registries.</p>
+        </div>
+
+        <div class="install-grid">
+          <article class="install-card install-card-primary">
+            <h3>Visual Studio Marketplace</h3>
+            <p>Recommended for standard VS Code users.</p>
+            <a
+              class="button button-primary"
+              href="https://marketplace.visualstudio.com/items?itemName=swd.arc-audit-ready-core"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open VS Marketplace
+            </a>
+          </article>
+
+          <article class="install-card">
+            <h3>Open VSX</h3>
+            <p>For Open VSX-compatible editors such as VSCodium and Theia.</p>
+            <a
+              class="button button-secondary"
+              href="https://open-vsx.org/extension/swd/arc-audit-ready-core"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open Open VSX
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <p class="footer-brand">ARC</p>
+        <p class="footer-copy">Audit Layer for AI‑Assisted Coding · ARC XT is the first live product.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="https://github.com/habrahgithub/lintel" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="./license.html">License</a>
+        <a href="./support.html">Support</a>
+      </nav>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
+

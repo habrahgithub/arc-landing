@@ -1,0 +1,6 @@
+# Vercel local project link metadata (never commit)
+.vercel/
+
+# OS
+.DS_Store
+Thumbs.db
