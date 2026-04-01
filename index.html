@@ -56,9 +56,8 @@
           <p class="kicker">Below AI tools · Before PR/CI</p>
           <h1>ARC — Audit Layer for AI‑Assisted Coding</h1>
           <p class="hero-text">
-            ARC introduces a deterministic, tamper-evident audit layer inside your IDE.
-            It records and verifies every critical code decision at the moment it’s made — before it
-            reaches PR, CI, or production.
+            ARC is the audit layer that operates at the moment code changes are made.
+            It verifies critical decisions before they reach PR, CI, or production.
           </p>
 
           <div class="diagram">
@@ -81,9 +80,9 @@ Git / PR / CI</pre>
           <div class="glass-panel">
             <div class="glass-title">What ARC adds</div>
             <ul class="glass-list">
-              <li>Decision record at save-time</li>
-              <li>Plan/proof artifact (Change ID blueprint)</li>
-              <li>Tamper-evident audit trail</li>
+              <li>Every critical decision has a verifiable origin.</li>
+              <li>Every change is linked to intent — not just diff.</li>
+              <li>Every action is provable after the fact.</li>
             </ul>
           </div>
         </div>
@@ -98,17 +97,34 @@ Git / PR / CI</pre>
             faster than it can be reviewed, “why” disappears.
           </p>
           <p class="callout">
+            Today, accountability starts at PR or CI. By then, the decision is already lost.
+          </p>
+          <p>
+            As AI becomes the default way code is written, auditability becomes a requirement — not a feature.
+          </p>
+          <p class="callout">
             If you can’t reliably answer <strong>who decided what, when, and why</strong> before PR, you don’t have an audit layer.
           </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="section-kicker">Missing layer</p>
+          <h2>Why a new layer is required</h2>
+          <p>AI changed how code is created.</p>
+          <p>PR and CI systems evaluate changes after decisions are already made.</p>
+          <p>Review can inspect code, but it cannot recover decision origin once it is missing.</p>
+          <p>A distinct layer must exist at the moment of change, before PR and CI.</p>
         </div>
       </section>
 
       <section class="section muted" id="how-it-works">
         <div class="section-heading">
           <p class="section-kicker">How it works</p>
-          <h2>ARC XT brings the ARC audit layer into VS Code.</h2>
+          <h2>ARC XT is the first implementation of the ARC audit layer in VS Code.</h2>
           <p>
-            ARC XT is the first live ARC product: a local-first VS Code extension that records and verifies critical decisions before a change reaches PR/CI.
+            ARC XT is a local-first VS Code extension that records and verifies critical decisions before a change reaches PR/CI.
           </p>
         </div>
 
@@ -194,6 +210,7 @@ Git / PR / CI</pre>
           <p class="section-kicker">Install</p>
           <h2>Install ARC XT</h2>
           <p>ARC XT is available on both major extension registries.</p>
+          <p>If you can’t explain your code decisions today, you don’t have control.</p>
         </div>
 
         <div class="install-grid">
