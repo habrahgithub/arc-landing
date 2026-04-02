@@ -1,299 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ARC — Audit Layer for AI-Assisted Coding</title>
-    <meta name="description" content="ARC introduces a deterministic, tamper-evident audit layer inside your IDE. It records and verifies critical code decisions before they reach PR/CI/production." />
-    <meta name="theme-color" content="#05050a" />
-
-    <meta property="og:title" content="ARC — Audit Layer for AI-Assisted Coding" />
-    <meta property="og:description" content="Deterministic, tamper-evident accountability inside the IDE — before PR/CI/production." />
-    <meta property="og:image" content="./assets/images/review-home.png" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
-    <link rel="icon" href="./assets/images/arc-icon.png" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="ARC home">
-        <div class="brand-logo"></div> <!-- Replaced img with div for css gradient base testing if no image found, but let's keep original img inside -->
-        <div class="brand-mark">ARC XT</div>
-        <div class="brand-subtitle">Audit Ready Core</div>
-      </a>
-
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span class="sr-only">Toggle navigation</span>
-      </button>
-
-      <nav id="site-nav" class="site-nav">
-        <a href="#problem">Problem</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#proof">Proof</a>
-        <a href="#install">Install</a>
-        <a href="./support.html">Support</a>
-      </nav>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ARC XT — Audit Ready Core | Deterministic AI Governance</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f6be3f",
+                        "on-primary": "#402d00",
+                        "tertiary": "#f1bf4c",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "surface": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "surface-variant": "#353534",
+                        "on-surface-variant": "#d3c5ae",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container": "#201f1f",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-highest": "#353534",
+                        "surface-container-lowest": "#0e0e0e",
+                        "outline-variant": "#4f4635"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0e0e0e; color: #e5e2e1; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+        .gold-gradient { background: linear-gradient(135deg, #f6be3f 0%, #d29e1e 100%); }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 bg-[#131313] shadow-lg border-b border-outline-variant/20">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary" data-icon="policy">policy</span>
+            <span class="font-headline font-black tracking-tighter text-xl text-primary">ARC XT</span>
+        </div>
+        <nav class="hidden md:flex gap-8">
+            <a class="text-primary font-semibold transition-colors" href="#">Manifesto</a>
+            <a class="text-[#e5e2e1] opacity-70 hover:opacity-100 transition-colors" href="#">Decisions</a>
+            <a class="text-[#e5e2e1] opacity-70 hover:opacity-100 transition-colors" href="#">Integrity</a>
+            <a class="text-[#e5e2e1] opacity-70 hover:opacity-100 transition-colors" href="#">Docs</a>
+        </nav>
     </header>
 
-    <main id="top">
-      <section class="section hero">
-        <div class="hero-copy fade-up">
-          <p class="kicker">Below AI tools · Before PR/CI</p>
-          <h1>ARC XT — Audit Ready Core</h1>
-          <p class="hero-text delay-1 fade-up">
-            ARC XT is a deterministic, tamper-evident audit layer that operates at the moment code changes are made.
-            It enforces governed code enforcement before decisions reach PR, CI, or production.
-          </p>
-
-          <div class="diagram delay-2 fade-up">
-            <pre aria-label="ARC stack position diagram">AI (Copilot / Cursor / Claude)
-        ↓
-ARC (Audit Layer)
-        ↓
-Git / PR / CI</pre>
-          </div>
-
-          <div class="hero-actions delay-3 fade-up">
-            <a class="button button-primary" href="#install">Install ARC XT</a>
-            <a class="button button-secondary" href="#how-it-works">See how it works</a>
-          </div>
-
-          <div class="posture-notes fade-up delay-3">
-            <span class="posture-badge">Local-only governance</span>
-            <span class="posture-badge">Descriptive-only review</span>
-            <span class="posture-badge">Non-authorizing surface</span>
-          </div>
-          <p class="hero-note delay-3 fade-up">Local-first by default · Cloud disabled by default · Fail-closed architecture</p>
-        </div>
-
-        <div class="hero-visual fade-up delay-2">
-          <div class="glass-panel" id="hero-glass">
-            <div class="glass-title">What ARC adds</div>
-            <ul class="glass-list">
-              <li>Every critical decision has a verifiable origin.</li>
-              <li>Every change is linked to intent — not just diff.</li>
-              <li>Every action is provable after the fact.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="problem">
-        <div class="section-heading fade-up">
-          <p class="section-kicker">Problem</p>
-          <h2>AI speeds output. It breaks accountability.</h2>
-          <p>
-            PR review shows diffs, not decisions. CI tests outcomes, not intent. When code is generated
-            faster than it can be reviewed, “why” disappears.
-          </p>
-          <p class="callout">
-            Today, accountability starts at PR or CI. By then, the decision is already lost.
-          </p>
-          <p>
-            As AI becomes the default way code is written, auditability becomes a requirement — not a feature.
-          </p>
-          <p class="callout" style="border-left-color: var(--accent-purple);">
-            If you can’t reliably answer <strong>who decided what, when, and why</strong> before PR, you don’t have an audit layer.
-          </p>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-heading fade-up">
-          <p class="section-kicker">Missing layer</p>
-          <h2>Why a new layer is required</h2>
-          <p>AI changed how code is created.</p>
-          <p>PR and CI systems evaluate changes after decisions are already made.</p>
-          <p>Review can inspect code, but it cannot recover decision origin once it is missing.</p>
-          <p>A distinct layer must exist at the moment of change, before PR and CI.</p>
-        </div>
-      </section>
-
-      <section class="section muted" id="how-it-works">
-        <div class="section-heading fade-up">
-          <p class="section-kicker">How it works</p>
-          <h2>ARC XT is the first implementation of the ARC audit layer in VS Code.</h2>
-          <p>
-            ARC XT is a local-first VS Code extension that records and verifies critical decisions before a change reaches PR/CI.
-          </p>
-        </div>
-
-        <div class="steps">
-          <article class="step-card fade-up delay-1">
-            <span class="step-number">01</span>
-            <h3>You make a critical change</h3>
-            <p>ARC activates where it matters: auth, schema, config, and other high-risk edits.</p>
-          </article>
-          <article class="step-card fade-up delay-2">
-            <span class="step-number">02</span>
-            <h3>ARC records the decision + proof</h3>
-            <p>Provide a Change ID to link the change to a plan-backed blueprint artifact.</p>
-          </article>
-          <article class="step-card fade-up delay-3">
-            <span class="step-number">03</span>
-            <h3>ARC writes tamper-evident evidence</h3>
-            <p>Audit events are chained and verifiable so integrity can be checked and drift detected.</p>
-          </article>
-        </div>
-
-        <aside class="note fade-up delay-1">
-          ARC XT sits <strong>below AI tools</strong> and <strong>before Git/PR/CI</strong> — inside the moment of change.
-        </aside>
-      </section>
-
-      <section class="section" id="decision-engine">
-        <div class="section-heading fade-up">
-          <p class="section-kicker">Heuristic Evaluation</p>
-          <h2>The Decision Engine</h2>
-          <p>Four enforcement levels mapped to your governed workspace.</p>
-        </div>
-
-        <div class="decision-grid">
-          <article class="decision-card allow fade-up delay-1">
-            <div class="decision-header">
-              <span class="status-indicator"></span>
-              <h3>ALLOW</h3>
+    <main class="flex-grow pt-24 pb-32">
+        <section class="px-6 mb-16 max-w-4xl mx-auto text-center md:text-left mt-8">
+            <div class="inline-flex items-center justify-center md:justify-start gap-2 px-3 py-1 mb-6 rounded-full bg-surface-container-highest/30 border border-outline-variant/30">
+                <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+                <span class="text-[10px] font-label uppercase tracking-widest text-primary">Local-first • Fail-closed • Read-only</span>
             </div>
-            <p>Low-risk changes such as UI components or tests. Save proceeds normally.</p>
-          </article>
-          <article class="decision-card warn fade-up delay-1">
-            <div class="decision-header">
-              <span class="status-indicator"></span>
-              <h3>WARN</h3>
+            
+            <p class="font-headline text-lg text-primary uppercase font-bold tracking-widest mb-4">Below AI tools · Before PR/CI</p>
+            <h1 class="font-headline text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+                Deterministic, <span class="text-primary">tamper-evident</span> accountability inside the IDE.
+            </h1>
+            <p class="font-body text-xl text-on-surface-variant mb-6 max-w-2xl leading-relaxed">
+                ARC XT operates at the moment of change, enforcing governed code boundaries before decisions ever reach pull requests, CI, or production.
+            </p>
+            <div class="flex flex-wrap gap-3 mb-10 text-xs font-mono text-on-surface-variant/80">
+                <span class="px-3 py-1 bg-surface-container rounded-md border border-outline-variant/20">Local-only governance</span>
+                <span class="px-3 py-1 bg-surface-container rounded-md border border-outline-variant/20">Descriptive-only review</span>
+                <span class="px-3 py-1 bg-surface-container rounded-md border border-outline-variant/20">Non-authorizing surface</span>
             </div>
-            <p>Medium-risk changes like config or schema edits. Requires operator acknowledgment.</p>
-          </article>
-          <article class="decision-card require-plan fade-up delay-2">
-            <div class="decision-header">
-              <span class="status-indicator"></span>
-              <h3>REQUIRE_PLAN</h3>
+            <div class="flex flex-col sm:flex-row gap-4 flex-wrap">
+                <a href="https://marketplace.visualstudio.com/items?itemName=swd.arc-audit-ready-core" class="gold-gradient text-on-primary font-bold px-8 py-4 rounded-xl active:scale-95 transition-all text-center">
+                    Install ARC XT
+                </a>
+                <a href="#engine" class="bg-surface-container-high text-primary font-bold px-8 py-4 rounded-xl border border-outline-variant/30 hover:bg-surface-container-highest transition-all text-center">
+                    See the Decision Engine
+                </a>
             </div>
-            <p>High-risk code logic. Requires linking a verifiable Blueprint Proof artifact.</p>
-          </article>
-          <article class="decision-card block fade-up delay-2">
-            <div class="decision-header">
-              <span class="status-indicator"></span>
-              <h3>BLOCK</h3>
+        </section>
+
+        <!-- The Decision Engine -->
+        <section id="engine" class="px-6 mb-24 max-w-5xl mx-auto mt-20">
+            <h2 class="font-headline text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-8 text-center">Heuristic Evaluation</h2>
+            <h3 class="font-headline text-3xl font-bold mb-10 text-center">The 4-Tier Decision Engine</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="p-6 rounded-2xl bg-surface-container-low border border-green-900/30 flex flex-col gap-3">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="w-3 h-3 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
+                        <h4 class="font-bold text-sm tracking-widest text-green-400">ALLOW</h4>
+                    </div>
+                    <p class="text-sm text-on-surface-variant">Low-risk changes like standard UI components or unit tests. Auto-validated and save proceeds normally.</p>
+                </div>
+                
+                <div class="p-6 rounded-2xl bg-surface-container-low border border-yellow-900/30 flex flex-col gap-3">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="w-3 h-3 rounded-full bg-yellow-400 shadow-[0_0_8px_rgba(250,204,21,0.6)]"></span>
+                        <h4 class="font-bold text-sm tracking-widest text-yellow-400">WARN</h4>
+                    </div>
+                    <p class="text-sm text-on-surface-variant">Medium-risk edits like minor config changes. Requires explicit operator acknowledgment before proceeding.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-surface-container-low border border-orange-900/30 flex flex-col gap-3">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="w-3 h-3 rounded-full bg-orange-500 shadow-[0_0_8px_rgba(249,115,22,0.6)]"></span>
+                        <h4 class="font-bold text-sm tracking-widest text-orange-400">REQUIRE_PLAN</h4>
+                    </div>
+                    <p class="text-sm text-on-surface-variant">High-risk logic modifications. Forces the operator to link a structured, pre-approved Blueprint Proof artifact.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-[#2a0808] border border-red-900/50 flex flex-col gap-3 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-red-900/10 pointer-events-none"></div>
+                    <div class="flex items-center gap-2 mb-2 relative z-10">
+                        <span class="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.8)]"></span>
+                        <h4 class="font-bold text-sm tracking-widest text-red-500">BLOCK</h4>
+                    </div>
+                    <p class="text-sm text-red-200/80 relative z-10">Critical policy violations or unauthorized secure zone modifications. Save event is strictly blocked.</p>
+                </div>
             </div>
-            <p>Critical-risk policy violations. Save is completely blocked and fail-closed.</p>
-          </article>
-        </div>
-      </section>
+        </section>
 
-      <section class="section" id="proof">
-        <div class="section-heading fade-up">
-          <p class="section-kicker">Proof</p>
-          <h2>What you get after a critical change</h2>
-        </div>
-
-        <div class="proof-grid">
-          <article class="proof-card fade-up delay-1">
-            <h3>Decision record</h3>
-            <p>Read-only descriptive review captured at save-time — not reconstructed later.</p>
-          </article>
-          <article class="proof-card fade-up delay-2">
-            <h3>Blueprint proof</h3>
-            <p>Instructional guidance linked to a Change ID, capturing bounded authorization.</p>
-          </article>
-          <article class="proof-card fade-up delay-3">
-            <h3>Hash-chain integrity</h3>
-            <p>Tamper-evident <code>.arc/audit.jsonl</code> audit entries you can cryptographically verify.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section muted">
-        <div class="section-heading fade-up">
-          <p class="section-kicker">Differentiation</p>
-          <h2>ARC is not an AI tool.</h2>
-        </div>
-
-        <div class="table-wrap fade-up delay-1" role="region" aria-label="Differentiation table" tabindex="0">
-          <table>
-            <thead>
-              <tr>
-                <th>Others</th>
-                <th>ARC</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Generate code</td>
-                <td><strong>Verify decisions</strong></td>
-              </tr>
-              <tr>
-                <td>Suggest fixes</td>
-                <td><strong>Record accountability</strong></td>
-              </tr>
-              <tr>
-                <td>Help speed</td>
-                <td><strong>Enforce trust</strong></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section class="section" id="install">
-        <div class="section-heading fade-up">
-          <p class="section-kicker">Install</p>
-          <h2>Install ARC XT</h2>
-          <p>ARC XT is available on both major extension registries.</p>
-          <p>If you can’t explain your code decisions today, you don’t have control.</p>
-        </div>
-
-        <div class="install-grid">
-          <article class="install-card install-card-primary fade-up delay-1">
-            <div>
-              <h3>Visual Studio Marketplace</h3>
-              <p>Recommended for standard VS Code users.</p>
+        <!-- Decision Feed / Integrity -->
+        <section class="px-6 mb-20 max-w-4xl mx-auto">
+            <div class="bg-surface-container rounded-2xl p-6 shadow-2xl relative overflow-hidden border border-outline-variant/20">
+                <div class="flex justify-between items-center mb-6 border-b border-outline-variant/20 pb-4">
+                    <h3 class="font-headline text-sm font-bold uppercase tracking-widest text-on-surface-variant">Cryptographic Audit Trail (audit.jsonl)</h3>
+                    <span class="text-[10px] text-primary/60 font-mono">HASH-CHAINED RECORD</span>
+                </div>
+                <div class="space-y-4 font-mono text-xs">
+                    <div class="flex gap-4 p-4 rounded-xl bg-surface-container-low border-l-4 border-orange-500">
+                        <div>
+                            <p class="text-orange-400 mb-1 font-bold">[REQUIRE_PLAN] Auth Module Mod</p>
+                            <p class="text-on-surface-variant/80">Blueprint linked: <span class="text-primary">BP-920</span>. Bounded authorization verified.</p>
+                            <p class="text-on-surface-variant/40 mt-2 text-[10px] truncate max-w-[200px] md:max-w-md">sha256: 8f4e2b0c9d...a1b2c3d4e5f6</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 p-4 rounded-xl bg-[rgba(42,8,8,1)] border-l-4 border-red-500">
+                        <div>
+                            <p class="text-red-400 mb-1 font-bold">[BLOCK] Credential Leak Prevented</p>
+                            <p class="text-red-200/70">Fail-closed triggered on <code class="bg-surface-container-lowest px-1 rounded">auth_service.py:142</code></p>
+                            <p class="text-on-surface-variant/40 mt-2 text-[10px] truncate max-w-[200px] md:max-w-md">sha256: 3a1c9f8e7d...f1e2d3c4b5a6</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a
-              class="button button-primary"
-              href="https://marketplace.visualstudio.com/items?itemName=swd.arc-audit-ready-core"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Open VS Marketplace
-            </a>
-          </article>
+        </section>
 
-          <article class="install-card fade-up delay-2">
-            <div>
-              <h3>Open VSX</h3>
-              <p>For Open VSX-compatible editors such as VSCodium and Theia.</p>
+        <!-- Value Prop -->
+        <section class="px-6 mb-24 max-w-6xl mx-auto mt-20">
+            <h2 class="font-headline text-3xl font-bold mb-12 text-center">Cryptographic Proof of Intent</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-surface-container p-8 rounded-2xl flex flex-col justify-between border border-outline-variant/10">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="data_object">data_object</span>
+                    <div>
+                        <h4 class="font-headline text-xl font-bold mb-3">Decision Record</h4>
+                        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Read-only descriptive reviews captured deterministically at save-time, never reconstructed after the fact.</p>
+                    </div>
+                </div>
+                <div class="bg-surface-container-high p-8 rounded-2xl flex flex-col justify-between border border-outline-variant/30">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="assignment_turned_in">assignment_turned_in</span>
+                    <div>
+                        <h4 class="font-headline text-xl font-bold mb-3">Blueprint Proof</h4>
+                        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Ensures high-risk changes are strictly mapped to instructional guidance through bounded authorization chains.</p>
+                    </div>
+                </div>
+                <div class="bg-surface-container p-8 rounded-2xl flex flex-col justify-between border border-outline-variant/10">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="lock">lock</span>
+                    <div>
+                        <h4 class="font-headline text-xl font-bold mb-3">Hash-chain Integrity</h4>
+                        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Tamper-evident audit events are mathematically chained so integrity remains provable over time.</p>
+                    </div>
+                </div>
             </div>
-            <a
-              class="button button-secondary"
-              href="https://open-vsx.org/extension/swd/arc-audit-ready-core"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Open Open VSX
-            </a>
-          </article>
-        </div>
-      </section>
+        </section>
+
+        <!-- Differentiation Table -->
+        <section class="px-6 mb-24 max-w-4xl mx-auto py-12 border-y border-outline-variant/20">
+            <h3 class="font-headline text-2xl font-bold mb-8 text-center">ARC XT is not a coding assistant.</h3>
+            <div class="bg-surface-container rounded-xl border border-outline-variant/20 overflow-hidden">
+                <table class="w-full text-left font-body text-sm">
+                    <thead class="bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-widest">
+                        <tr>
+                            <th class="p-4 border-b border-outline-variant/20 font-semibold w-1/2">AI Coding Assistants</th>
+                            <th class="p-4 border-b border-outline-variant/20 font-semibold w-1/2 text-primary">ARC XT Governance Layer</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-outline-variant/10 text-on-surface">
+                        <tr>
+                            <td class="p-4 text-on-surface-variant/70">Generate code and suggest fixes</td>
+                            <td class="p-4 font-semibold">Verify deterministic boundaries</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 text-on-surface-variant/70">Maximize velocity and output</td>
+                            <td class="p-4 font-semibold">Enforce trust and operational accountability</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 text-on-surface-variant/70">Run as active sidecars</td>
+                            <td class="p-4 font-semibold">Run as a read-only observability substrate</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 
-    <footer class="site-footer fade-up">
-      <div>
-        <p class="footer-brand">ARC XT</p>
-        <p class="footer-copy">Audit Ready Core · Local-first, bounded governance for AI‑Assisted Workflows.</p>
-      </div>
-      <nav class="footer-links">
-        <a href="https://github.com/habrahgithub/lintel" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="./license.html">License</a>
-        <a href="./support.html">Support</a>
-      </nav>
+    <footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#0e0e0e] border-t border-outline-variant/10">
+        <div class="flex items-center gap-2">
+            <span class="text-primary font-bold font-headline">ARC XT</span>
+            <span class="font-body text-xs text-on-surface-variant opacity-70">© 2026 Lintel Core. Local-first, bounded governance.</span>
+        </div>
+        <div class="flex gap-6">
+            <a class="font-body text-xs text-on-surface-variant opacity-70 hover:text-primary transition-colors" href="https://github.com/habrahgithub/lintel">GitHub</a>
+            <a class="font-body text-xs text-on-surface-variant opacity-70 hover:text-primary transition-colors" href="./license.html">License</a>
+            <a class="font-body text-xs text-on-surface-variant opacity-70 hover:text-primary transition-colors" href="./support.html">Support</a>
+        </div>
     </footer>
-
     <script src="./script.js"></script>
-  </body>
+</body>
 </html>
