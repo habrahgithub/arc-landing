@@ -21,8 +21,8 @@
     <header class="site-header">
       <a class="brand" href="#top" aria-label="ARC home">
         <div class="brand-logo"></div> <!-- Replaced img with div for css gradient base testing if no image found, but let's keep original img inside -->
-        <div class="brand-mark">ARC</div>
-        <div class="brand-subtitle">Audit Layer for AI‑Assisted Coding</div>
+        <div class="brand-mark">ARC XT</div>
+        <div class="brand-subtitle">Audit Ready Core</div>
       </a>
 
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
@@ -45,10 +45,10 @@
       <section class="section hero">
         <div class="hero-copy fade-up">
           <p class="kicker">Below AI tools · Before PR/CI</p>
-          <h1>ARC — Audit Layer for AI‑Assisted Coding</h1>
+          <h1>ARC XT — Audit Ready Core</h1>
           <p class="hero-text delay-1 fade-up">
-            ARC is the audit layer that operates at the moment code changes are made.
-            It verifies critical decisions before they reach PR, CI, or production.
+            ARC XT is a deterministic, tamper-evident audit layer that operates at the moment code changes are made.
+            It enforces governed code enforcement before decisions reach PR, CI, or production.
           </p>
 
           <div class="diagram delay-2 fade-up">
@@ -64,7 +64,12 @@ Git / PR / CI</pre>
             <a class="button button-secondary" href="#how-it-works">See how it works</a>
           </div>
 
-          <p class="hero-note delay-3 fade-up">Local-first · No cloud required · Evidence you can verify</p>
+          <div class="posture-notes fade-up delay-3">
+            <span class="posture-badge">Local-only governance</span>
+            <span class="posture-badge">Descriptive-only review</span>
+            <span class="posture-badge">Non-authorizing surface</span>
+          </div>
+          <p class="hero-note delay-3 fade-up">Local-first by default · Cloud disabled by default · Fail-closed architecture</p>
         </div>
 
         <div class="hero-visual fade-up delay-2">
@@ -138,8 +143,47 @@ Git / PR / CI</pre>
         </div>
 
         <aside class="note fade-up delay-1">
-          ARC sits <strong>below AI tools</strong> and <strong>before Git/PR/CI</strong> — inside the moment of change.
+          ARC XT sits <strong>below AI tools</strong> and <strong>before Git/PR/CI</strong> — inside the moment of change.
         </aside>
+      </section>
+
+      <section class="section" id="decision-engine">
+        <div class="section-heading fade-up">
+          <p class="section-kicker">Heuristic Evaluation</p>
+          <h2>The Decision Engine</h2>
+          <p>Four enforcement levels mapped to your governed workspace.</p>
+        </div>
+
+        <div class="decision-grid">
+          <article class="decision-card allow fade-up delay-1">
+            <div class="decision-header">
+              <span class="status-indicator"></span>
+              <h3>ALLOW</h3>
+            </div>
+            <p>Low-risk changes such as UI components or tests. Save proceeds normally.</p>
+          </article>
+          <article class="decision-card warn fade-up delay-1">
+            <div class="decision-header">
+              <span class="status-indicator"></span>
+              <h3>WARN</h3>
+            </div>
+            <p>Medium-risk changes like config or schema edits. Requires operator acknowledgment.</p>
+          </article>
+          <article class="decision-card require-plan fade-up delay-2">
+            <div class="decision-header">
+              <span class="status-indicator"></span>
+              <h3>REQUIRE_PLAN</h3>
+            </div>
+            <p>High-risk code logic. Requires linking a verifiable Blueprint Proof artifact.</p>
+          </article>
+          <article class="decision-card block fade-up delay-2">
+            <div class="decision-header">
+              <span class="status-indicator"></span>
+              <h3>BLOCK</h3>
+            </div>
+            <p>Critical-risk policy violations. Save is completely blocked and fail-closed.</p>
+          </article>
+        </div>
       </section>
 
       <section class="section" id="proof">
@@ -151,15 +195,15 @@ Git / PR / CI</pre>
         <div class="proof-grid">
           <article class="proof-card fade-up delay-1">
             <h3>Decision record</h3>
-            <p>Captured at save-time — not reconstructed later from PR context.</p>
+            <p>Read-only descriptive review captured at save-time — not reconstructed later.</p>
           </article>
           <article class="proof-card fade-up delay-2">
-            <h3>Plan/proof artifact</h3>
-            <p>Change ID blueprint links authorization, scope, constraints, and verification.</p>
+            <h3>Blueprint proof</h3>
+            <p>Instructional guidance linked to a Change ID, capturing bounded authorization.</p>
           </article>
           <article class="proof-card fade-up delay-3">
-            <h3>Tamper-evident audit trail</h3>
-            <p>Chained evidence you can verify, with drift and partial-write detection.</p>
+            <h3>Hash-chain integrity</h3>
+            <p>Tamper-evident <code>.arc/audit.jsonl</code> audit entries you can cryptographically verify.</p>
           </article>
         </div>
       </section>
@@ -240,8 +284,8 @@ Git / PR / CI</pre>
 
     <footer class="site-footer fade-up">
       <div>
-        <p class="footer-brand">ARC</p>
-        <p class="footer-copy">Audit Layer for AI‑Assisted Coding · ARC XT is the first live product.</p>
+        <p class="footer-brand">ARC XT</p>
+        <p class="footer-copy">Audit Ready Core · Local-first, bounded governance for AI‑Assisted Workflows.</p>
       </div>
       <nav class="footer-links">
         <a href="https://github.com/habrahgithub/lintel" target="_blank" rel="noreferrer">GitHub</a>

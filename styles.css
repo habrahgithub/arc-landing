@@ -357,6 +357,25 @@ h2 {
   box-shadow: 0 0 10px var(--accent);
 }
 
+/* Posture Badges for Lintel Governance Alignment */
+.posture-notes {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.posture-badge {
+  background: rgba(14, 99, 156, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
 /* Glass panel */
 .hero-visual {
   display: flex;
@@ -424,8 +443,15 @@ h2 {
   margin-top: 40px;
 }
 
+.decision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
 /* Cards Design System */
-.step-card, .proof-card, .install-card {
+.step-card, .proof-card, .install-card, .decision-card {
   position: relative;
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.02);
@@ -437,7 +463,7 @@ h2 {
   flex-direction: column;
 }
 
-.step-card:hover, .proof-card:hover, .install-card:hover {
+.step-card:hover, .proof-card:hover, .install-card:hover, .decision-card:hover {
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(255, 255, 255, 0.2);
@@ -445,7 +471,7 @@ h2 {
 }
 
 /* Subtle glow behind cards on hover */
-.step-card::after, .proof-card::after {
+.step-card::after, .proof-card::after, .decision-card::after {
   content: '';
   position: absolute;
   top: 50%; left: 50%;
@@ -458,7 +484,7 @@ h2 {
   pointer-events: none;
   z-index: 0;
 }
-.step-card:hover::after, .proof-card:hover::after {
+.step-card:hover::after, .proof-card:hover::after, .decision-card:hover::after {
   opacity: 0.15;
 }
 
@@ -488,7 +514,7 @@ h2 {
   font-weight: 700;
 }
 
-.step-card p, .proof-card p {
+.step-card p, .proof-card p, .decision-card p {
   position: relative;
   z-index: 1;
   margin: 0;
@@ -496,6 +522,42 @@ h2 {
   line-height: 1.7;
   flex: 1;
 }
+
+/* Decision Engine States */
+.decision-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+.decision-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-family: Manrope, sans-serif;
+  font-weight: 800;
+}
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px currentColor;
+}
+.decision-card.allow .status-indicator { color: #34d399; background: #34d399; }
+.decision-card.warn .status-indicator { color: #fbbf24; background: #fbbf24; }
+.decision-card.require-plan .status-indicator { color: #a78bfa; background: #a78bfa; }
+.decision-card.block .status-indicator { color: #f87171; background: #f87171; }
+
+.decision-card.allow:hover { border-color: rgba(52, 211, 153, 0.4); }
+.decision-card.warn:hover { border-color: rgba(251, 191, 36, 0.4); }
+.decision-card.require-plan:hover { border-color: rgba(167, 139, 250, 0.4); }
+.decision-card.block:hover { border-color: rgba(248, 113, 113, 0.4); }
+
+.decision-card.allow::after { background: #34d399; }
+.decision-card.warn::after { background: #fbbf24; }
+.decision-card.require-plan::after { background: #a78bfa; }
+.decision-card.block::after { background: #f87171; }
 
 /* Callouts & Notes */
 .callout {
@@ -665,7 +727,7 @@ tr:hover td {
     max-width: 600px;
   }
 
-  .steps, .proof-grid {
+  .steps, .proof-grid, .decision-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
