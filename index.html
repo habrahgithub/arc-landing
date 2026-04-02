@@ -4,32 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ARC — Audit Layer for AI-Assisted Coding</title>
-    <meta
-      name="description"
-      content="ARC introduces a deterministic, tamper-evident audit layer inside your IDE. It records and verifies critical code decisions before they reach PR/CI/production."
-    />
-    <meta name="theme-color" content="#0e0e0e" />
+    <meta name="description" content="ARC introduces a deterministic, tamper-evident audit layer inside your IDE. It records and verifies critical code decisions before they reach PR/CI/production." />
+    <meta name="theme-color" content="#05050a" />
 
     <meta property="og:title" content="ARC — Audit Layer for AI-Assisted Coding" />
-    <meta
-      property="og:description"
-      content="Deterministic, tamper-evident accountability inside the IDE — before PR/CI/production."
-    />
+    <meta property="og:description" content="Deterministic, tamper-evident accountability inside the IDE — before PR/CI/production." />
     <meta property="og:image" content="./assets/images/review-home.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
     <link rel="icon" href="./assets/images/arc-icon.png" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="ARC home">
-        <img class="brand-logo" src="./assets/images/arc-icon.png" alt="ARC logo" />
+        <div class="brand-logo"></div> <!-- Replaced img with div for css gradient base testing if no image found, but let's keep original img inside -->
         <div class="brand-mark">ARC</div>
         <div class="brand-subtitle">Audit Layer for AI‑Assisted Coding</div>
       </a>
@@ -52,15 +43,15 @@
 
     <main id="top">
       <section class="section hero">
-        <div class="hero-copy">
+        <div class="hero-copy fade-up">
           <p class="kicker">Below AI tools · Before PR/CI</p>
           <h1>ARC — Audit Layer for AI‑Assisted Coding</h1>
-          <p class="hero-text">
+          <p class="hero-text delay-1 fade-up">
             ARC is the audit layer that operates at the moment code changes are made.
             It verifies critical decisions before they reach PR, CI, or production.
           </p>
 
-          <div class="diagram">
+          <div class="diagram delay-2 fade-up">
             <pre aria-label="ARC stack position diagram">AI (Copilot / Cursor / Claude)
         ↓
 ARC (Audit Layer)
@@ -68,16 +59,16 @@ ARC (Audit Layer)
 Git / PR / CI</pre>
           </div>
 
-          <div class="hero-actions">
+          <div class="hero-actions delay-3 fade-up">
             <a class="button button-primary" href="#install">Install ARC XT</a>
             <a class="button button-secondary" href="#how-it-works">See how it works</a>
           </div>
 
-          <p class="hero-note">Local-first · No cloud required · Evidence you can verify</p>
+          <p class="hero-note delay-3 fade-up">Local-first · No cloud required · Evidence you can verify</p>
         </div>
 
-        <div class="hero-visual">
-          <div class="glass-panel">
+        <div class="hero-visual fade-up delay-2">
+          <div class="glass-panel" id="hero-glass">
             <div class="glass-title">What ARC adds</div>
             <ul class="glass-list">
               <li>Every critical decision has a verifiable origin.</li>
@@ -89,7 +80,7 @@ Git / PR / CI</pre>
       </section>
 
       <section class="section" id="problem">
-        <div class="section-heading">
+        <div class="section-heading fade-up">
           <p class="section-kicker">Problem</p>
           <h2>AI speeds output. It breaks accountability.</h2>
           <p>
@@ -102,14 +93,14 @@ Git / PR / CI</pre>
           <p>
             As AI becomes the default way code is written, auditability becomes a requirement — not a feature.
           </p>
-          <p class="callout">
+          <p class="callout" style="border-left-color: var(--accent-purple);">
             If you can’t reliably answer <strong>who decided what, when, and why</strong> before PR, you don’t have an audit layer.
           </p>
         </div>
       </section>
 
       <section class="section">
-        <div class="section-heading">
+        <div class="section-heading fade-up">
           <p class="section-kicker">Missing layer</p>
           <h2>Why a new layer is required</h2>
           <p>AI changed how code is created.</p>
@@ -120,7 +111,7 @@ Git / PR / CI</pre>
       </section>
 
       <section class="section muted" id="how-it-works">
-        <div class="section-heading">
+        <div class="section-heading fade-up">
           <p class="section-kicker">How it works</p>
           <h2>ARC XT is the first implementation of the ARC audit layer in VS Code.</h2>
           <p>
@@ -129,44 +120,44 @@ Git / PR / CI</pre>
         </div>
 
         <div class="steps">
-          <article class="step-card">
+          <article class="step-card fade-up delay-1">
             <span class="step-number">01</span>
             <h3>You make a critical change</h3>
             <p>ARC activates where it matters: auth, schema, config, and other high-risk edits.</p>
           </article>
-          <article class="step-card">
+          <article class="step-card fade-up delay-2">
             <span class="step-number">02</span>
             <h3>ARC records the decision + proof</h3>
             <p>Provide a Change ID to link the change to a plan-backed blueprint artifact.</p>
           </article>
-          <article class="step-card">
+          <article class="step-card fade-up delay-3">
             <span class="step-number">03</span>
             <h3>ARC writes tamper-evident evidence</h3>
             <p>Audit events are chained and verifiable so integrity can be checked and drift detected.</p>
           </article>
         </div>
 
-        <aside class="note">
+        <aside class="note fade-up delay-1">
           ARC sits <strong>below AI tools</strong> and <strong>before Git/PR/CI</strong> — inside the moment of change.
         </aside>
       </section>
 
       <section class="section" id="proof">
-        <div class="section-heading">
+        <div class="section-heading fade-up">
           <p class="section-kicker">Proof</p>
           <h2>What you get after a critical change</h2>
         </div>
 
         <div class="proof-grid">
-          <article class="proof-card">
+          <article class="proof-card fade-up delay-1">
             <h3>Decision record</h3>
             <p>Captured at save-time — not reconstructed later from PR context.</p>
           </article>
-          <article class="proof-card">
+          <article class="proof-card fade-up delay-2">
             <h3>Plan/proof artifact</h3>
             <p>Change ID blueprint links authorization, scope, constraints, and verification.</p>
           </article>
-          <article class="proof-card">
+          <article class="proof-card fade-up delay-3">
             <h3>Tamper-evident audit trail</h3>
             <p>Chained evidence you can verify, with drift and partial-write detection.</p>
           </article>
@@ -174,12 +165,12 @@ Git / PR / CI</pre>
       </section>
 
       <section class="section muted">
-        <div class="section-heading">
+        <div class="section-heading fade-up">
           <p class="section-kicker">Differentiation</p>
           <h2>ARC is not an AI tool.</h2>
         </div>
 
-        <div class="table-wrap" role="region" aria-label="Differentiation table" tabindex="0">
+        <div class="table-wrap fade-up delay-1" role="region" aria-label="Differentiation table" tabindex="0">
           <table>
             <thead>
               <tr>
@@ -206,7 +197,7 @@ Git / PR / CI</pre>
       </section>
 
       <section class="section" id="install">
-        <div class="section-heading">
+        <div class="section-heading fade-up">
           <p class="section-kicker">Install</p>
           <h2>Install ARC XT</h2>
           <p>ARC XT is available on both major extension registries.</p>
@@ -214,9 +205,11 @@ Git / PR / CI</pre>
         </div>
 
         <div class="install-grid">
-          <article class="install-card install-card-primary">
-            <h3>Visual Studio Marketplace</h3>
-            <p>Recommended for standard VS Code users.</p>
+          <article class="install-card install-card-primary fade-up delay-1">
+            <div>
+              <h3>Visual Studio Marketplace</h3>
+              <p>Recommended for standard VS Code users.</p>
+            </div>
             <a
               class="button button-primary"
               href="https://marketplace.visualstudio.com/items?itemName=swd.arc-audit-ready-core"
@@ -227,9 +220,11 @@ Git / PR / CI</pre>
             </a>
           </article>
 
-          <article class="install-card">
-            <h3>Open VSX</h3>
-            <p>For Open VSX-compatible editors such as VSCodium and Theia.</p>
+          <article class="install-card fade-up delay-2">
+            <div>
+              <h3>Open VSX</h3>
+              <p>For Open VSX-compatible editors such as VSCodium and Theia.</p>
+            </div>
             <a
               class="button button-secondary"
               href="https://open-vsx.org/extension/swd/arc-audit-ready-core"
@@ -243,7 +238,7 @@ Git / PR / CI</pre>
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer fade-up">
       <div>
         <p class="footer-brand">ARC</p>
         <p class="footer-copy">Audit Layer for AI‑Assisted Coding · ARC XT is the first live product.</p>
