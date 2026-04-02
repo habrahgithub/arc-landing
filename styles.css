@@ -112,8 +112,9 @@ a {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  border: 1px solid var(--border);
-  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
+  border: 1px solid var(--accent);
+  background: url('./assets/images/arc-icon.png') center/contain no-repeat, linear-gradient(135deg, rgba(255,255,255,0.05), rgba(0,0,0,0.8));
+  box-shadow: 0 0 12px var(--accent-glow);
   transition: var(--transition);
 }
 
